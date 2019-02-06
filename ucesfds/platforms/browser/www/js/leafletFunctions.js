@@ -1,17 +1,11 @@
 function addPointLinePoly() {
 	// add a point
-	L.marker([51.5, -0.09]).addTo(mymap).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-	// add a circle
-	L.circle([51.508, -0.11], 500, {
-	color: 'red',
-	fillColor: '#f03',
-	fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("I am a circle.");
+	L.marker([51.5, -0.09]).addTo(mymap).bindPopup("I am a point");
 	// add a line
 	var polyline = L.polyline([
-		[51.460, -0.09],
-        [51.470, -0.11],
-        [51.480, -0.095]
+		[51.508, -0.13],
+        [51.503, -0.11],
+        [51.5, -0.095]
         ],
         {
           color: 'red',
@@ -29,3 +23,4 @@ function addPointLinePoly() {
 	fillOpacity: 0.5
 	}).addTo(mymap).bindPopup("I am a polygon.");
 }
+addPointLinePoly();
