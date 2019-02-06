@@ -55,4 +55,4 @@ function loadEarthquakelayer(earthquakedata) {
 }
 
 addPointLinePoly();
-getEarthquakes();
+//getEarthquakes();
