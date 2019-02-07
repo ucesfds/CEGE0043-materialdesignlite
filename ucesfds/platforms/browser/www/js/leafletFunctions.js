@@ -54,5 +54,5 @@ function loadEarthquakelayer(earthquakedata) {
 	mymap.fitBounds(earthquakelayer.getBounds());
 }
 
-addPointLinePoly();
+//addPointLinePoly();
 //getEarthquakes();
