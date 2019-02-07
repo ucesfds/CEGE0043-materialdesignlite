@@ -1,0 +1,4 @@
+function trackAndPoly() {
+	trackLocation();
+	addPointLinePoly();
+}
