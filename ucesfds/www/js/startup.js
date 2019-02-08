@@ -8,4 +8,5 @@ function startup() {
 function trackAndPoly() {
 	trackLocation();
 	addPointLinePoly();
+	getEarthquakes();
 }

@@ -28,6 +28,8 @@ function addPointLinePoly() {
 var client;
 // and a variable that will hold the layer itself – we need to do this outside the function so that we can use it to remove the layer later on
 var earthquakelayer;
+// global variable to get hold of the Earthquakes data
+var earthquakes;
 // create the code to get the Earthquakes data using an XMLHttpRequest
 function getEarthquakes() {
 	client = new XMLHttpRequest();
@@ -48,6 +50,7 @@ function earthquakeResponse() {
 function loadEarthquakelayer(earthquakedata) {
 	// convert the text to JSON
 	var earthquakejson = JSON.parse(earthquakedata);
+	earthquakes = earthquakejson;
 	// add the JSON layer onto the map - it will appear using the default icons
 	earthquakelayer = L.geoJson(earthquakejson).addTo(mymap);
 	// change the map zoom so that all the data is shown
