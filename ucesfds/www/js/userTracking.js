@@ -13,6 +13,7 @@ function showPosition(position) {
 		mymap.removeLayer(userMarker);
 	}
 	userMarker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(mymap).bindPopup("<b>You were here</b>");
+	getDistance();
 }
 
 function getDistance() {
@@ -26,8 +27,11 @@ function getDistanceFromPoint(position) {
 	var lat = 51.524616;
 	var lng = -0.13818;
 	// return the distance in kilometers
-	var distance = calculateDistance(position.coords.latitude, position.coords.longitude, lat,lng, 'K');
-	document.getElementById('showDistance').innerHTML = "Distance: " + distance;
+	var distance = calculateDistance(position.coords.latitude, position.coords.longitude, lat,lng, 'm');
+
+	if (distance <= 100) {
+		alert("You are " + distance +" m from UCL.")
+	}
 }
 // code adapted from https://www.htmlgoodies.com/beyond/javascript/calculate-the-distance-between-two-points-inyour-web-apps.html
 function calculateDistance(lat1, lon1, lat2, lon2, unit) {
@@ -44,5 +48,6 @@ function calculateDistance(lat1, lon1, lat2, lon2, unit) {
 	// where radius of the earth is 3956 miles
 	if (unit=="K") { dist = dist * 1.609344 ;} // convert miles to km
 	if (unit=="N") { dist = dist * 0.8684 ;} // convert miles to nautical miles
+	if (unit=="m") { dist = dist * 1609.344 ;} // convert miles to meters
 	return dist;
 }
